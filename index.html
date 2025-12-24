@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ebook Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="pageLoader" class="page-loader">
+    <div class="page-loader-inner">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
+  </div>
+  <div class="page">
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <img src="Profile.jpeg" alt="Profile" class="profile-image">
+          <div class="brand-text">
+            <h1>Ebook Portfolio</h1>
+          </div>
+        </div>
+        <div class="theme-toggle" aria-label="Color theme">
+          <span class="theme-label">
+            Theme:
+            <span id="themeName" class="theme-name">Dark</span>
+          </span>
+          <button id="themeToggleButton" class="secondary-button theme-toggle-button" type="button">
+            Switch to Light
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section class="intro">
+        <h2>Showcase Library</h2>
+        <p>Click any ebook to open a full-page preview, flip through the pages, and zoom the pages.</p>
+      </section>
+
+      <section class="books-section">
+        <div class="section-header">
+          <h3>Featured Ebooks</h3>
+          <p>Completed professional design projects for clients across digital publications.</p>
+        </div>
+        <div id="booksGrid" class="books-grid" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <p class="footer-text">Feel free to contact me to discuss your project.</p>
+    </footer>
+
+    <!-- Lightbox / Gallery Modal -->
+    <div id="lightbox" class="lightbox hidden" aria-hidden="true">
+      <div class="lightbox-backdrop"></div>
+      <div class="lightbox-dialog" role="dialog" aria-modal="true" aria-label="Ebook preview" tabindex="-1">
+        <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
+
+        <header class="lightbox-header">
+          <h2 id="lightboxTitle" class="lightbox-title"></h2>
+          <p class="lightbox-meta">
+            <span id="lightboxPageIndicator"></span>
+          </p>
+        </header>
+
+        <div class="lightbox-body">
+          <button id="prevButton" class="nav-button prev" type="button" aria-label="Previous page">
+            &#10094;
+          </button>
+
+          <div class="lightbox-image-wrapper">
+            <div id="lightboxSpinner" class="lightbox-spinner" aria-hidden="true">
+              <div class="spinner-circle"></div>
+            </div>
+            <img id="lightboxImage" src="" alt="" />
+          </div>
+
+          <button id="nextButton" class="nav-button next" type="button" aria-label="Next page">
+            &#10095;
+          </button>
+        </div>
+
+        <footer class="lightbox-footer">
+          <div class="lightbox-actions">
+            <div class="zoom-controls">
+              <button id="zoomOutButton" class="secondary-button zoom-button" type="button" aria-label="Zoom out">-
+              </button>
+              <button id="zoomInButton" class="secondary-button zoom-button" type="button" aria-label="Zoom in">+
+              </button>
+            </div>
+            <button id="closeButton" class="secondary-button" type="button">Close</button>
+          </div>
+          <p class="lightbox-hint">Use the Left and Right arrow keys to navigate pages, Esc to close.</p>
+        </footer>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
